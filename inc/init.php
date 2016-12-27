@@ -32,6 +32,7 @@ if ( class_exists( 'SiteOrigin_Widget' ) ) {
 		'cta'              =>'cta/cta.php',
 		'banner'           =>'banner/banner.php',
 		'random-images'    =>'random-images/random-images.php',
+		'progressbar'      =>'progressbar/progressbar.php'
 		);
 		$temp_dir = get_template_directory();
 		foreach ($so_widgets as $key => $value) {
