@@ -1,28 +1,12 @@
-<?php
-$allowed_html =  array(
-     'strong' => array(),
-	);
-if( 'one' === $instance['style']):
-?>
-<div class="text-left">
-    <?php if ( ! empty( $instance['primary_title'] ) ) : ?>
-		<h5 class="lead-title"><?php echo wp_kses( $instance['primary_title'], $allowed_html); ?></h5>
-    <?php endif; ?>
-    <?php if ( ! empty( $instance['title_content'] ) ) : ?>
-		<p class="lead-border-left border-black"><?php echo esc_attr( $instance['title_content'] );?></p>
-    <?php endif; ?>
-</div>
-<?php else: ?>
+<section class="col-xs-12 random-images">
+    <?php
+    $i = 1;
+    foreach ( $instance['random_images'] as $image ){
+        $image_url = wp_get_attachment_image_src( $image['image'], 'full'); ?>
+        <div id="image-<?php echo $i;?>">
+            <a  href="<?php echo esc_url( $image_url[0]) ?>" data-lightbox="random" data-title="<?php  echo $image['text']?>">
+                <img src="<?php echo esc_url( $image_url[0]) ?>" alt="<?php echo $image['text']?>" class="img-responsive" /></a>
+        </div>
 
-<section class="col-xs-12 text-right">
-    <?php if ( ! empty( $instance['primary_title'] ) ) : ?>
-    <h4 class="lead-title lead-border-bottom border-black"><?php echo wp_kses( $instance['primary_title'], $allowed_html); ?></h4>
-    <?php endif; ?>
-    <?php if ( ! empty( $instance['title_content'] ) ) : ?>
-  	<?php echo esc_attr( $instance['title_content'] );;?>
-    <?php endif; ?>
-  
-    <a href="about.html" class="btn-link btn-link-solid-black">Meet the Team</a>
-    
-  </section>
-<?php endif;?>
+    <?php $i++;  } ?>
+</section>

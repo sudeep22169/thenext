@@ -19,10 +19,7 @@ if( 'one' === $instance['style']):
     <h4 class="lead-title lead-border-bottom border-black"><?php echo wp_kses( $instance['primary_title'], $allowed_html); ?></h4>
     <?php endif; ?>
     <?php if ( ! empty( $instance['title_content'] ) ) : ?>
-  	<?php echo esc_attr( $instance['title_content'] );;?>
+  	<p><?php echo esc_attr( $instance['title_content'] );;?></p>
     <?php endif; ?>
-  
-    <a href="about.html" class="btn-link btn-link-solid-black">Meet the Team</a>
-    
   </section>
 <?php endif;?>

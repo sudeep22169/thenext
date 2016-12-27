@@ -30,7 +30,8 @@ if ( class_exists( 'SiteOrigin_Widget' ) ) {
 		'point-features'   =>'point-features/point-features.php',
 		'youtube-video'    =>'youtube-video/youtube-video.php',
 		'cta'              =>'cta/cta.php',
-		'banner'           =>'banner/banner.php'
+		'banner'           =>'banner/banner.php',
+		'random-images'    =>'random-images/random-images.php',
 		);
 		$temp_dir = get_template_directory();
 		foreach ($so_widgets as $key => $value) {
