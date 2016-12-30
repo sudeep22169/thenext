@@ -1,12 +1,12 @@
 <?php
 
-class Fi_Print_Latest_Post_Widget extends SiteOrigin_Widget {
+class The_Next_Latest_Post_Widget extends SiteOrigin_Widget {
 	function __construct() {
 		parent::__construct(
-			'fi-print-latest-post',
-			__( 'Fi Print: Latest_Post', 'fi-print' ),
+			'thenext-latest-post',
+			__( 'TheNext: Latest Post', 'thenext' ),
 			array(
-				'description' => __('Display Latest Post', 'fi-print' ),
+				'description' => __('Display Latest Post', 'thenext' ),
 
 				),
 			array(),
@@ -14,25 +14,25 @@ class Fi_Print_Latest_Post_Widget extends SiteOrigin_Widget {
 
 				'title' => array(
 					'type'  => 'text',
-					'label' => __( 'widget Title', 'fi-print' )
+					'label' => __( 'widget Title', 'thenext' )
 				),
 				'sub_title' => array(
 					'type'  => 'text',
-					'label' => __( 'Widget Subtitle', 'fi-print' )
+					'label' => __( 'Widget Subtitle', 'thenext' )
 				),
-				
+
 				'post_number'=> array(
 					'type'  => 'text',
-					'label' => __( 'Post Number', 'fi-print' )
+					'label' => __( 'Post Number', 'thenext' )
 
 				),
 				'post_style' => array(
 					'type'     => 'select',
-					'label'    => __( 'Post  Style', 'fi-print' ),
+					'label'    => __( 'Post  Style', 'thenext' ),
 					'default'  => 'one',
 					'options'  => array(
-						'one' => __( 'Style One', 'fi-print' ),
-						'two'  => __( 'Style Two', 'fi-print' ),
+						'one' => __( 'Style One', 'thenext' ),
+						'two'  => __( 'Style Two', 'thenext' ),
 					),
 				),
 
@@ -45,4 +45,4 @@ class Fi_Print_Latest_Post_Widget extends SiteOrigin_Widget {
 	}
 
 }
-siteorigin_widget_register('fi-print-latest-post', __FILE__,'Fi_Print_Latest_Post_Widget');
+siteorigin_widget_register('thenext-latest-post', __FILE__,'The_Next_Latest_Post_Widget');

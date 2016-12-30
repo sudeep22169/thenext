@@ -170,6 +170,8 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/inc/navwalker.php';
 require get_template_directory() . '/inc/init.php';
+require get_template_directory() . '/inc/aquaresizer.php';
+
 
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/options-config.php' ) ) {
     require_once( dirname( __FILE__ ) . '/options-config.php' );
@@ -249,7 +251,7 @@ function next_add_search_box_to_menu( $items, $args ) {
     return $items;
 }
 require get_template_directory() . '/inc/cmb2-details.php';
-// 
+//
 function next_post_meta() {
     $prefix="page_";
     $cmb = new_cmb2_box( array(
@@ -289,7 +291,7 @@ add_action( 'cmb2_admin_init', 'next_post_meta' );
 if ( ! function_exists( 'thenext_panels_row_container_start' ) ) {
 
     function thenext_panels_row_container_start( $grid, $fields ) {
-       
+
        if ( ! array_key_exists( "row_stretch",$fields['style'] ) )
         {
             echo '<div class="container">';

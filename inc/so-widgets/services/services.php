@@ -1,12 +1,12 @@
 <?php
 
-class Fi_Print_Services_Widget extends SiteOrigin_Widget {
+class TheNext_Services_Widget extends SiteOrigin_Widget {
 	function __construct() {
 		parent::__construct(
-			'fi-print-services',
-			__( 'Fi Print: Services', 'fi-print' ),
+			'the-next-services',
+			__( 'TheNext: Services with Icon', 'the-next' ),
 			array(
-				'description' => __('Fi Print Services', 'fi-print' ),
+				'description' => __('The Next Services', 'the-next' ),
 
 				),
 			array(),
@@ -14,19 +14,19 @@ class Fi_Print_Services_Widget extends SiteOrigin_Widget {
 
 				'services_repeater' => array(
 					'type'  => 'repeater',
-					'label' => __('Services Details.', 'fi-print'),
+					'label' => __('Services Details.', 'the-next'),
 					'fields' => array(
 						'image' => array(
-							'type'  => 'media',
-							'label' => __( 'Select Services Image', 'fi-print' )
+							'type'  => 'icon',
+							'label' => __( 'Select Services Image', 'the-next' )
 						),
 						'title' => array(
 							'type'  => 'text',
-							'label' => __( 'Services Title', 'fi-print' )
+							'label' => __( 'Services Title', 'the-next' )
 						),
 						'sub_title' => array(
 							'type'  => 'text',
-							'label' => __( 'Services Subtitle', 'fi-print' )
+							'label' => __( 'Services Subtitle', 'the-next' )
 						),
 
 					),
@@ -40,4 +40,4 @@ class Fi_Print_Services_Widget extends SiteOrigin_Widget {
 	}
 
 }
-siteorigin_widget_register('fi-print-services', __FILE__,'Fi_Print_Services_Widget');
+siteorigin_widget_register('the-next-services', __FILE__,'TheNext_Services_Widget');
