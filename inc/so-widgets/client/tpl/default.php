@@ -1,24 +1,20 @@
-<?php if( $instance['style'] =='single' ) 
-{ 
-$row_class ='row';
-$col_class ='col-xs-6 col-md-4 col-lg-2';
-echo '<div class="brands m-t-1">';
-}
-else {
-$col_class ='col-xs-4';
-$row_class ='row row-brands';
-}?>
+<section class="col-xs-12 client-logo">
+      <section class="container">
 
-	<div class="<?php echo $row_class;?>">
+	  <div class="transition col-sm-4 counter-container">
+	    <span class="counter project-counter">62</span><span> clients &amp; counting..</span>
+	  </div>
+	  <div class="col-sm-7 col-sm-offset-1">
+	    <figure class="col-xs-6 col-md-4">
+	      <a href="#"><img src="images/client-1.jpg" class="img-responsive" alt="client"></a></figure>
+	    <figure class="col-xs-6 col-md-4"><a href="#"><img src="images/client-2.jpg" class="img-responsive" alt="client"></a></figure>
+	    <figure class="col-xs-6 col-md-4"><a href="#"><img src="images/client-3.jpg" class="img-responsive" alt="client"></a></figure>
+	    <figure class="col-xs-6 col-md-4"><a href="#"><img src="images/client-2.jpg" class="img-responsive" alt="client"></a></figure>
+	    <figure class="col-xs-6 col-md-4"><a href="#"><img src="images/client-3.jpg" class="img-responsive" alt="client"></a></figure>
 
-	<?php   foreach ( $instance['client_repeater'] as $client_repeater ){
+	    <figure class="col-xs-6 col-md-4"><a href="#"><img src="images/client-4.jpg" class="img-responsive" alt="client"></a></figure>
 
-       	$image_url = wp_get_attachment_image_src( $client_repeater['client_title'], 'full'); ?>
+	  </div>
+      </section>
 
-		<div class="<?php echo $col_class;?>"><img src="<?php echo esc_url( $image_url[0] );?>"></div>
-
-	<?php } ?>
-
-	</div>
-
-<?php if( $instance['style']=='single' ) echo '</div>';?>
+    </section>
