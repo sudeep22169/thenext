@@ -10,6 +10,15 @@ class TheNext_Client_Widget extends SiteOrigin_Widget {
 			array(),
 			array(
 
+				'client_number' => array(
+					'type' => 'number',
+					'label' => __('Total Clients Number', 'widget-form-fields-text-domain'),
+				),
+				'client_text' => array(
+					'type' => 'text',
+					'label' => __('optional Clients Description', 'widget-form-fields-text-domain'),
+				),
+
 				'client_repeater' => array(
 					'type'  => 'repeater',
 					'label' => __('Client Details.', 'thenext'),
@@ -19,7 +28,7 @@ class TheNext_Client_Widget extends SiteOrigin_Widget {
 							'label' => __( 'Client Image', 'thenext' )
 						),
 						'client_url'=>  array(
-							'type'  => 'text',
+							'type'  => 'link',
 							'label' => __( 'Client URL', 'thenext' )
 						),
 					),
