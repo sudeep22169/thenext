@@ -64,5 +64,5 @@
 <!-- BODY SECTION -->
 <section id="section-body">
 <?php 
-//get_template_part('partials/breadcrumb'); 
+get_template_part('partials/breadcrumb'); 
 ?>
