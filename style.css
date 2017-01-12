@@ -4353,15 +4353,6 @@ h6{
     background-size: cover;
 }
 
-#third-article.block:hover:after,
-#third-article.block.latest-post:after{
-    background: linear-gradient(
-		rgba(255,255,255, 0.8),
-		rgba(255,255,255, 0.8)
-	      ),url(../thenext/assets/images/minimal.jpg) no-repeat;
-    background-size: cover;
-}
-
 #forth-article.block:hover:after,
 #forth-article.block.latest-post:after{
     background: linear-gradient(
