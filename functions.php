@@ -318,13 +318,14 @@ add_filter('siteorigin_panels_after_row', 'thenext_panels_row_container_end', 10
 /**
  * Hook to show blogs
  */
-add_action('blog_listing','thenext_blog_listing',10,1);
-function thenext_blog_listing($post_id){
+add_action('blog_listing','thenext_blog_listing',10,3);
+function thenext_blog_listing($post_id,$count,$post){
+    $w=($count==1)?'1110':'570';
     $thumbnail = get_post_thumbnail_id($post_id);
     $img_url = wp_get_attachment_image_src( $thumbnail,'full');
     $alt = get_post_meta($thumbnail, '_wp_attachment_image_alt', true);
     if($img_url):
-        $n_img = aq_resize( $img_url[0], $width =690, $height = 270, $crop = true, $single = true, $upscale = true );
+        $n_img = aq_resize( $img_url[0], $width =$w, $height = 270, $crop = true, $single = true, $upscale = true );
     endif;
     $author_id=$post->post_author; 
     echo '
