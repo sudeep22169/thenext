@@ -11,15 +11,31 @@
 
 ?>
 </section><!--header section-->
+	<section id="section-footer" class="col-xs-12">
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'thenext' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'thenext' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'thenext' ), 'thenext', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+  <div class="container">
+      <?php get_template_part( 'partials/footer-layout'); ?>      
+ </div>
+      
+      
+      <section class="col-xs-12 footer-widget widget-social widget-social-h text-center">
+	 
+	  <ul>
+	    <li><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
+	    <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
+	    <li><a href="#"><i class="fa fa-dribbble"></i>Dribbble</a></li>
+	    <li><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
+	  </ul>
+      </section>
+	
+	
+      <footer class="col-xs-12 copyright dark-bg">
+	    <div class="col-xs-12">
+		  <div>theNEXT © 2016 - All rights reserved. </div>
+	    </div>
+      </footer>
+
+</section>
 
 <?php wp_footer(); ?>
 

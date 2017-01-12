@@ -95,6 +95,48 @@ function thenext_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+     // Footer Block 1
+        register_sidebar(array(
+            'name' => "Footer Block 1",
+            'id' => "next-widgets-footer-block-1",
+            'description' => __('Widgets placed here will display in the right sidebar', 'next'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<div class="module-title"><h4>',
+            'after_title'   => '</h4><span class="module-separator"></span></div>'
+        ));
+        // Footer Block 2
+        register_sidebar(array(
+            'name' => "Footer Block 2",
+            'id' => "next-widgets-footer-block-2",
+            'description' => __('Widgets placed here will display in the right sidebar', 'next'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<div class="module-title"><h4>',
+            'after_title'   => '</h4><span class="module-separator"></span></div>'
+        ));
+        // Footer Block 3
+       register_sidebar(array(
+            'name' => "Footer Block 3",
+            'id' => "next-widgets-footer-block-3",
+           'description' => __('Widgets placed here will display in the right sidebar', 'next'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<div class="module-title"><h4>',
+            'after_title'   => '</h4><span class="module-separator"></span></div>'
+        ));
+        
+
+        // Footer Block 4
+       register_sidebar(array(
+            'name' => "Footer Block 4",
+            'id' => "next-widgets-footer-block-4",
+            'description' => __('Widgets placed here will display in the right sidebar', 'next'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<div class="module-title"><h4>',
+            'after_title'   => '</h4><span class="module-separator"></span></div>'
+        ));
 }
 add_action( 'widgets_init', 'thenext_widgets_init' );
 

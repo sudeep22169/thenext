@@ -34,8 +34,8 @@
         //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
         'allow_sub_menu'       => false,
         // Show the sections below the admin menu item or not
-        'menu_title'           => __( 'Theme Options', 'fi-print' ),
-        'page_title'           => __( 'Theme Options', 'fi-print' ),
+        'menu_title'           => __( 'Theme Options', 'next' ),
+        'page_title'           => __( 'Theme Options', 'next' ),
         // You will need to generate a Google API key to use this feature.
         // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
         'google_api_key'       => '',
@@ -131,17 +131,17 @@
 //    $args['admin_bar_links'][] = array(
 //        'id'    => 'redux-docs',
 //        'href'  => 'http://docs.reduxframework.com/',
-//        'title' => __( 'Documentation', 'fi-print' ),
+//        'title' => __( 'Documentation', 'next' ),
 //    );
 //    $args['admin_bar_links'][] = array(
 //        //'id'    => 'redux-support',
 //        'href'  => 'https://github.com/ReduxFramework/redux-framework/issues',
-//        'title' => __( 'Support', 'fi-print' ),
+//        'title' => __( 'Support', 'next' ),
 //    );
 //    $args['admin_bar_links'][] = array(
 //        'id'    => 'redux-extensions',
 //        'href'  => 'reduxframework.com/extensions',
-//        'title' => __( 'Extensions', 'fi-print' ),
+//        'title' => __( 'Extensions', 'next' ),
 //    );
     // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
 //    $args['share_icons'][] = array(
@@ -151,12 +151,12 @@
 //        //'img'   => '', // You can use icon OR img. IMG needs to be a full URL.
 //    );
     $args['share_icons'][] = array(
-        'url'   => 'https://www.facebook.com/fi_printthemes',
+        'url'   => 'https://www.facebook.com/nextthemes',
         'title' => 'Like us on Facebook',
         'icon'  => 'el el-facebook'
     );
     $args['share_icons'][] = array(
-        'url'   => 'http://www.twitter.com/fi_printthemes',
+        'url'   => 'http://www.twitter.com/nextthemes',
         'title' => 'Follow us on Twitter',
         'icon'  => 'el el-twitter'
     );
@@ -172,12 +172,12 @@
         } else {
             $v = str_replace( '-', '_', $args['opt_name'] );
         }
-//        $args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'fi-print' ), $v );
+//        $args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'next' ), $v );
     } else {
-//        $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'fi-print' );
+//        $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'next' );
     }
     // Add content after the form.
-//    $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'fi-print' );
+//    $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'next' );
     Redux::setArgs( $opt_name, $args );
     /*
      * ---> END ARGUMENTS
@@ -188,18 +188,18 @@
 //    $tabs = array(
 //        array(
 //            'id'      => 'redux-help-tab-1',
-//            'title'   => __( 'Theme Information 1', 'fi-print' ),
-//            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'fi-print' )
+//            'title'   => __( 'Theme Information 1', 'next' ),
+//            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'next' )
 //        ),
 //        array(
 //            'id'      => 'redux-help-tab-2',
-//            'title'   => __( 'Theme Information 2', 'fi-print' ),
-//            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'fi-print' )
+//            'title'   => __( 'Theme Information 2', 'next' ),
+//            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'next' )
 //        )
 //    );
 //    Redux::setHelpTab( $opt_name, $tabs );
     // Set the help sidebar
-//    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'fi-print' );
+//    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'next' );
 //    Redux::setHelpSidebar( $opt_name, $content );
     /*
      * <--- END HELP TABS
@@ -217,75 +217,75 @@
     // -----------------------------------------------------------------------------------
     if ( is_customize_preview() ) {
         // Change subtitle text in customizer / options panel
-        $fi_print_subtitle_customizer   = 'subtitle';
-        $fi_print_subtitle_panel        = NULL;
+        $next_subtitle_customizer   = 'subtitle';
+        $next_subtitle_panel        = NULL;
         // Change section field used in customizer / options panel
-        $fi_print_section_field         = 'fi_print_section';
+        $next_section_field         = 'next_section';
         // Enable sub-sections in customizer
-        $fi_print_customizer_subsection = true;
+        $next_customizer_subsection = true;
         Redux::setSection( $opt_name, array(
-            'title'            => __( 'Theme Options', 'fi-print' ),
-            'id'               => 'fi_print_theme_options',
-            'desc'             => __( 'Use the options below to customize your theme!', 'fi-print' ),
+            'title'            => __( 'Theme Options', 'next' ),
+            'id'               => 'next_theme_options',
+            'desc'             => __( 'Use the options below to customize your theme!', 'next' ),
             'customizer_width' => '400px',
             'icon'             => 'el el-home',
             'customizer'       => true,
         ) );
     } else {
         // Disable sub-sections in theme options panel
-        $fi_print_customizer_subsection = false;
+        $next_customizer_subsection = false;
         // Change subtitle text in customizer / options panel
-        $fi_print_subtitle_customizer   = NULL;
-        $fi_print_subtitle_panel        = 'subtitle';
+        $next_subtitle_customizer   = NULL;
+        $next_subtitle_panel        = 'subtitle';
         // Change section field used in customizer / options panel
-        $fi_print_section_field         = 'section';
+        $next_section_field         = 'section';
     }
     // -----------------------------------------------------------------------------------
     //  1.  General Settings
     // -----------------------------------------------------------------------------------
     Redux::setSection( $opt_name, array(
-        'title'      => __('General Settings', 'fi-print'),
-        'header'     => __('Welcome to the Simple Options Framework Demo', 'fi-print'),
-        'desc'       => __('<span class="redux-title">Logo & Favicon Settings</span>', 'fi-print'),
+        'title'      => __('General Settings', 'next'),
+        'header'     => __('Welcome to the Simple Options Framework Demo', 'next'),
+        'desc'       => __('<span class="redux-title">Logo & Favicon Settings</span>', 'next'),
         'icon_class' => '',
         'icon'       => 'el el-wrench',
-        'subsection' => $fi_print_customizer_subsection,
+        'subsection' => $next_customizer_subsection,
         'customizer' => true,
         'fields'     => array(
                     array(
                          'id'        => 'preloader',
                          'type'      => 'switch',
-                         'title'     => __('Activate preloader', 'fi-print'),
-                         'subtitle'  => __('Smooth page loader for your site', 'fi-print'),
+                         'title'     => __('Activate preloader', 'next'),
+                         'subtitle'  => __('Smooth page loader for your site', 'next'),
                          'default'   => '1',
                      ),
                     array(
                         'id'        => 'preloader-logo',
                         'type'      => 'media',
-                        'title'     => __('Logo in the Preloader', 'fi-print'),
+                        'title'     => __('Logo in the Preloader', 'next'),
                         'compiler'  => 'true',
                         'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                        'subtitle'  => __('Upload logo to be displayed on prelaoder', 'fi-print'),
+                        'subtitle'  => __('Upload logo to be displayed on prelaoder', 'next'),
                     ),
                     array(
                         'id'        => 'logo',
                         'type'      => 'media',
-                        'title'     => __('Logo Normal', 'fi-print'),
+                        'title'     => __('Logo Normal', 'next'),
                         'compiler'  => 'true',
                         'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                        'subtitle'  => __('Upload header logo for your website', 'fi-print'),
+                        'subtitle'  => __('Upload header logo for your website', 'next'),
                     ),
                     array(
                         'id'        => 'retinalogo',
                         'type'      => 'media',
-                        'title'     => __('Retina Normal', 'fi-print'),
+                        'title'     => __('Retina Normal', 'next'),
                         'compiler'  => 'true',
                         'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                        'subtitle'  => __('Upload header logo for your website', 'fi-print'),
+                        'subtitle'  => __('Upload header logo for your website', 'next'),
                     ),
                     array(
                     
-                    'title' => __('Enable Top Bar', 'fi-print'),
+                    'title' => __('Enable Top Bar', 'next'),
                     
                     'id'    => 'top-bar',
                     
@@ -295,21 +295,21 @@
                     array(
                         'id'        => 'top-bar-title-1',
                         'type'      => 'text',
-                        'title'     => __('Top Bar Title One', 'fi-print'),
+                        'title'     => __('Top Bar Title One', 'next'),
                         'compiler'  => 'true',
                         'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
                     ),
                     array(
                         'id'        => 'top-bar-detail-1',
                         'type'      => 'text',
-                        'title'     => __('Top Bar Detail One', 'fi-print'),
+                        'title'     => __('Top Bar Detail One', 'next'),
                         'compiler'  => 'true',
                         'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
                     ),
                     array(
                         'id'        => 'top-bar-title-2',
                         'type'      => 'text',
-                        'title'     => __('Top Bar Title Two', 'fi-print'),
+                        'title'     => __('Top Bar Title Two', 'next'),
                         'compiler'  => 'true',
                         'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
                         'default'   => false,
@@ -317,7 +317,7 @@
                     array(
                         'id'        => 'top-bar-detail-2',
                         'type'      => 'text',
-                        'title'     => __('Top Bar Title Detail Two', 'fi-print'),
+                        'title'     => __('Top Bar Title Detail Two', 'next'),
                         'compiler'  => 'true',
                         'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
                         'default'   => false,
@@ -325,7 +325,7 @@
                     array(
                         'id'        => 'top-bar-title-3',
                         'type'      => 'text',
-                        'title'     => __('Top Bar Title Three', 'fi-print'),
+                        'title'     => __('Top Bar Title Three', 'next'),
                         'compiler'  => 'true',
                         'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
                         'default'   => false,
@@ -333,22 +333,22 @@
                     array(
                         'id'        => 'top-bar-detail-3',
                         'type'      => 'text',
-                        'title'     => __('Top Bar Detail Three', 'fi-print'),
+                        'title'     => __('Top Bar Detail Three', 'next'),
                         'compiler'  => 'true',
                         'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
                     ),
                      array(
                         'id'        => 'google-map-api',
                         'type'      => 'text',
-                        'title'     => __('Google Map API', 'fi-print'),
+                        'title'     => __('Google Map API', 'next'),
                         'compiler'  => 'true',
                         'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
                     ),
                     array(
-                        'title'                      => __('Custom CSS', 'fi-print'),
-                        $fi_print_subtitle_panel      => __('Developers can use this to apply custom css. Use this to control, by styling of any element on the webpage by targeting id&#39;s and classes.', 'fi-print'),
-                        $fi_print_subtitle_customizer => __('Developers can use this to apply custom css. Use this to control, by styling of any element on the webpage by targeting id&#39;s and classes.', 'fi-print'),
-                        'id'                         => 'fi_print_general_customcss',
+                        'title'                      => __('Custom CSS', 'next'),
+                        $next_subtitle_panel      => __('Developers can use this to apply custom css. Use this to control, by styling of any element on the webpage by targeting id&#39;s and classes.', 'next'),
+                        $next_subtitle_customizer => __('Developers can use this to apply custom css. Use this to control, by styling of any element on the webpage by targeting id&#39;s and classes.', 'next'),
+                        'id'                         => 'next_general_customcss',
                         'type'                       => 'textarea',
                         'validate'                   => 'css',
                     ),
@@ -358,24 +358,24 @@
     //  3.  Header
     // -----------------------------------------------------------------------------------
     Redux::setSection( $opt_name, array(
-        'title'      => __('Header', 'fi-print'),
-        'desc'       => __('<span class="redux-title">Control Header Content</span>', 'fi-print'),
+        'title'      => __('Header', 'next'),
+        'desc'       => __('<span class="redux-title">Control Header Content</span>', 'next'),
         'icon'       => 'el el-chevron-up',
         'icon_class' => '',
-        'subsection' => $fi_print_customizer_subsection,
+        'subsection' => $next_customizer_subsection,
         'customizer' => true,
         'fields'     => array(
            
             array(
-                'title'   => __('Menu Button Text', 'fi-print'),
-                'desc'    => __('Enter text for the button at the right side of navigation menu', 'fi-print'),
-                'id'      => 'fi_print_menubutton_text',
+                'title'   => __('Menu Button Text', 'next'),
+                'desc'    => __('Enter text for the button at the right side of navigation menu', 'next'),
+                'id'      => 'next_menubutton_text',
                 'type'    => 'text',
             ),
             array(
-                'title'   => __('Menu Button URL', 'fi-print'),
-                'desc'    => __('Enter URL for the button at the right side of navigation menu', 'fi-print'),
-                'id'      => 'fi_print_menubutton_url',
+                'title'   => __('Menu Button URL', 'next'),
+                'desc'    => __('Enter URL for the button at the right side of navigation menu', 'next'),
+                'id'      => 'next_menubutton_url',
                 'type'    => 'text',
                 'sanitize'=>'url'
             ),
@@ -386,98 +386,98 @@
     //  4.  Footer
     // -----------------------------------------------------------------------------------
     Redux::setSection( $opt_name, array(
-        'title'      => __('Footer', 'fi-print'),
-        'desc'       => __('<span class="redux-title">Control Footer Content</span>', 'fi-print'),
+        'title'      => __('Footer', 'next'),
+        'desc'       => __('<span class="redux-title">Control Footer Content</span>', 'next'),
         'icon'       => 'el el-chevron-down',
         'icon_class' => '',
-        'subsection' => $fi_print_customizer_subsection,
+        'subsection' => $next_customizer_subsection,
         'customizer' => true,
         'fields'     => array(
             array(
-                'title'                      => __('Footer Widgets Layout', 'fi-print'),
-                $fi_print_subtitle_panel      => __('Select footer layout. Take complete control of the footer content by adding widgets.', 'fi-print'),
-                $fi_print_subtitle_customizer => __('Select footer layout. Take complete control of the footer content by adding widgets.', 'fi-print'),
-                'id'                         => 'fi_print_footer_layout',
+                'title'                      => __('Footer Widgets Layout', 'next'),
+                $next_subtitle_panel      => __('Select footer layout. Take complete control of the footer content by adding widgets.', 'next'),
+                $next_subtitle_customizer => __('Select footer layout. Take complete control of the footer content by adding widgets.', 'next'),
+                'id'                         => 'footer-layout',
                 'type'                       => 'image_select',
                 'compiler'                   => true,
                 'default'                    => '0',
                 'options'                    => array(
-                    'option1'  => get_template_directory_uri() . '/assets/img/ft-1cl.png',
-                    'option2'  => get_template_directory_uri() . '/assets/img/ft-2cl.png',
-                    'option3'  => get_template_directory_uri() . '/assets/img/ft-2cl2.png',
-                    'option4'  => get_template_directory_uri() . '/assets/img/ft-2cl3.png',
-                    'option5'  => get_template_directory_uri() . '/assets/img/ft-2cl4.png',
-                    'option6'  => get_template_directory_uri() . '/assets/img/ft-3cl.png',
-                    'option7'  => get_template_directory_uri() . '/assets/img/ft-3cl2.png',
-                    'option8'  => get_template_directory_uri() . '/assets/img/ft-3cl3.png',
-                    'option9'  => get_template_directory_uri() . '/assets/img/ft-3cl4.png',
-                    'option10' => get_template_directory_uri() . '/assets/img/ft-4cl.png',
+                    '1'  => get_template_directory_uri() . '/assets/img/ft-1cl.png',
+                    '2'  => get_template_directory_uri() . '/assets/img/ft-2cl.png',
+                    '3'  => get_template_directory_uri() . '/assets/img/ft-2cl2.png',
+                    '4'  => get_template_directory_uri() . '/assets/img/ft-2cl3.png',
+                    '5'  => get_template_directory_uri() . '/assets/img/ft-2cl4.png',
+                    '6'  => get_template_directory_uri() . '/assets/img/ft-3cl.png',
+                    '7'  => get_template_directory_uri() . '/assets/img/ft-3cl2.png',
+                    '8'  => get_template_directory_uri() . '/assets/img/ft-3cl3.png',
+                    '9'  => get_template_directory_uri() . '/assets/img/ft-3cl4.png',
+                    '10' => get_template_directory_uri() . '/assets/img/ft-4cl.png',
                     ),
                 ),
             array(
-                'title'   => __('Disable Footer Widgets', 'fi-print'),
-                'desc'    => __('Check to disable footer widgets.', 'fi-print'),
-                'id'      => 'fi_print_footer_widgetswitch',
+                'title'   => __('Disable Footer Widgets', 'next'),
+                'desc'    => __('Check to disable footer widgets.', 'next'),
+                'id'      => 'next_footer_widgetswitch',
                 'type'    => 'checkbox',
                 'default' => '0',
             ),
             array(
-                'title'   => __('Footer Background color', 'fi-print'),
-                'id'      => 'fi_print_footer_background_color',
+                'title'   => __('Footer Background color', 'next'),
+                'id'      => 'next_footer_background_color',
                 'type'    => 'color_rgba',
                 'default' =>'rgba(0, 40, 59, 0.97)',
             ),
             array(
-                'title'   => __('Footer extra class', 'fi-print'),
-                'id'      => 'fi_print_footer_extra_class',
+                'title'   => __('Footer extra class', 'next'),
+                'id'      => 'next_footer_extra_class',
                 'type'    => 'text',
             ),
             array(
-                'title'   => __('Disable Footer bottom', 'fi-print'),
-                'desc'    => __('Check to disable bottom footer', 'fi-print'),
-                'id'      => 'fi_print_footer_bottom',
+                'title'   => __('Disable Footer bottom', 'next'),
+                'desc'    => __('Check to disable bottom footer', 'next'),
+                'id'      => 'next_footer_bottom',
                 'type'    => 'checkbox',
                 'default' => '0',
             ),
             array(
-                'title'   => __('Footer Background', 'fi-print'),
-                'desc'    => __('Upload an image for footer background', 'fi-print'),
-                'id'      => 'fi_print_footer_background',
+                'title'   => __('Footer Background', 'next'),
+                'desc'    => __('Upload an image for footer background', 'next'),
+                'id'      => 'next_footer_background',
                 'type'    => 'media',
             ),
             array(
-                'title'   => __('Footer Text One', 'fi-print'),
-                'desc'    => __('Text on the left side of bottom footer', 'fi-print'),
-                'id'      => 'fi_print_footer_text1',
+                'title'   => __('Footer Text One', 'next'),
+                'desc'    => __('Text on the left side of bottom footer', 'next'),
+                'id'      => 'next_footer_text1',
                 'type'    => 'editor',
             ),
             array(
-                'title'   => __('Footer Text Two', 'fi-print'),
-                'desc'    => __('Text on the right side of bottom footer', 'fi-print'),
-                'id'      => 'fi_print_footer_text2',
+                'title'   => __('Footer Text Two', 'next'),
+                'desc'    => __('Text on the right side of bottom footer', 'next'),
+                'id'      => 'next_footer_text2',
                 'type'    => 'editor',
-                'default' =>__('Made with <i class="fa fa-heart text-secondary"></i> by jThemes Studio','fi-print'),
+                'default' =>__('Made with <i class="fa fa-heart text-secondary"></i> by jThemes Studio','next'),
             ),
             array(
-                 'id'        => 'fi_print_scrollup',
+                 'id'        => 'next_scrollup',
                  'type'      => 'switch',
-                 'title'     => __('Enable Scroll Up Button', 'fi-print'),
+                 'title'     => __('Enable Scroll Up Button', 'next'),
                  'default'   => '1',
             ),
         )
     ) );
     
  Redux::setSection( $opt_name, array(
-        'title'      => __('Portfolio', 'fi-print'),
-        'desc'       => __('<span class="redux-title">Control Portfolio Pages</span>', 'fi-print'),
+        'title'      => __('Portfolio', 'next'),
+        'desc'       => __('<span class="redux-title">Control Portfolio Pages</span>', 'next'),
         'icon'       => 'el el-comment',
         'icon_class' => '',
-        'subsection' => $fi_print_customizer_subsection,
+        'subsection' => $next_customizer_subsection,
         'customizer' => true,
         'fields'     => array(
             array(
-                'title'   => __('Portfolio Number', 'fi-print'),
-                'desc'    => __('Number of portfolio elements to display in portfolio page', 'fi-print'),
+                'title'   => __('Portfolio Number', 'next'),
+                'desc'    => __('Number of portfolio elements to display in portfolio page', 'next'),
                 'id'      => 'portfolio_number',
                 'type'    => 'text',
                 'default' => '10',

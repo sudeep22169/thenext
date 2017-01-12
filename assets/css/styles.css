@@ -2813,7 +2813,7 @@ h6{
 }
 
 #banner-about-home{
-    /*background: url('../images/about-home.jpg') no-repeat 50% fixed;*/
+    background: url('../images/about-home.jpg') no-repeat 50% fixed;
     background-size: cover;
 }
 
