@@ -17,8 +17,8 @@ query_posts('post_type=post&post_status=publish&order=ASC&paged='. get_query_var
 					the_post();
 					echo '<div class="entry col-md-12">';?>
 						<article id="<?php the_ID('second-article');?>" <?php post_class("text-left block");?>><?php
-								get_template_part( 'template-parts/content', get_post_format() );
-						echo '</article>';
+								get_template_part( 'template-parts/content', get_post_format() );?>
+						</article><?php
 					echo '</div>';
 					$count++;
 			endwhile;

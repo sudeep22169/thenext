@@ -3,7 +3,6 @@ if (!defined('ABSPATH')) {echo '<h3>Forbidden</h3>'; exit();}
 global $next_options;
 $pageid=get_the_ID();
 $bc_image=get_template_directory_uri().'/assets/images/minimal.jpg';
-$pageid=get_the_ID();
 $bc_style=0;$bc_style_theme=0;
 $theme_bc_style=$next_options['breadcrumb_option'];
 if(!empty($next_options['breadcrumb_image']['url'])):

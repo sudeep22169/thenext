@@ -16,11 +16,11 @@ class Fi_Print_Title_Widget extends SiteOrigin_Widget {
 				),
 				'primary_title_options' => array(
 					'type' => 'select',
-					'label' => __( 'Choose Title style', 'wthenext' ),
+					'label' => __( 'Choose Title style', 'thenext' ),
 					'default' => 'the_other_thing',
 					'options' => array(
-						'thick' => __( 'Thick', 'wthenext' ),
-						'thin' => __( 'Thin', 'wthenext' ),
+						'thick' => __( 'Thick', 'thenext' ),
+						'thin' => __( 'Thin', 'thenext' ),
 					)
 				),
 

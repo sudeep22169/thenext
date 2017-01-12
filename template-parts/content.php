@@ -16,7 +16,7 @@
 	</div>
 	<?php $author_id=$post->post_author; ?>
 	<div class="blog-meta col-xs-12 col-md-10">          
-	    <a href="<?php echo get_author_posts_url($author_id); ?>><i class="icon icon-basic-pin2"></i> <?php echo the_author_meta(  'user_nicename' , $author_id ); ?> </a>
+	    <a href="<?php echo get_author_posts_url($author_id); ?>""><i class="icon icon-basic-pin2"></i> <?php echo the_author_meta(  'user_nicename' , $author_id ); ?> </a>
 	    <a href="#"><i class="icon icon-basic-heart"></i> 24</a>
 	    <a href="<?php comments_link(); ?>"><i class="icon icon-basic-message"></i><?php comments_number( '0', '1', '%' ); ?></a>
 	</div>   

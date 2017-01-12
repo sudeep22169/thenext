@@ -1,88 +1,43 @@
 <?php
-
-
-
-class Fi_Print_Client_Widget extends SiteOrigin_Widget {
-
+class TheNext_Client_Widget extends SiteOrigin_Widget {
 	function __construct() {
-
 		parent::__construct(
-
-			'fi-print-client',
-
-			__( 'Fi Print: Client', 'fi-print' ),
-
+			'thenext-client',
+			__( 'TheNext: Client', 'thenext' ),
 			array(
-
-				'description' => __('Display Client Logos', 'fi-print' ),
-
-
-
+				'description' => __('Display Client Logos', 'thenext' ),
 				),
-
 			array(),
-
 			array(
 
-				'style'=>  array(
-
-							'type'  => 'select',
-
-							'label' => __( 'Widget Style', 'fi-print' ),
-
-							'options'=> array(
-
-								'single' => __('Single row style', 'fi-print'),
-								
-								'grid' => __('Grid style', 'fi-print') ,
-
-							), 
-
-							'default' => 'single',
-
-						),
+				'client_number' => array(
+					'type' => 'number',
+					'label' => __('Total Clients Number', 'widget-form-fields-text-domain'),
+				),
+				'client_text' => array(
+					'type' => 'text',
+					'label' => __('optional Clients Description', 'widget-form-fields-text-domain'),
+				),
 
 				'client_repeater' => array(
-
 					'type'  => 'repeater',
-
-					'label' => __('Client Details.', 'fi-print'),
-
+					'label' => __('Client Details.', 'thenext'),
 					'fields' => array(
-
-
-
 						'client_title'=>  array(
-
 							'type'  => 'media',
-
-							'label' => __( 'Client Image', 'fi-print' )
-
+							'label' => __( 'Client Image', 'thenext' )
 						),
-
-						
-
+						'client_url'=>  array(
+							'type'  => 'link',
+							'label' => __( 'Client URL', 'thenext' )
+						),
 					),
-
 				),
-
-
-
 			)
-
 		);
-
 	}
-
 	function get_template_name($instance){
-
 		return 'default';
-
 	}
-
-
-
 }
-
-siteorigin_widget_register('fi-print-client', __FILE__,'Fi_Print_Client_Widget');
-
+siteorigin_widget_register('thenext-client', __FILE__,'TheNext_Client_Widget');

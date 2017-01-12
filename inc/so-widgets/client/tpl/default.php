@@ -1,24 +1,26 @@
-<?php if( $instance['style'] =='single' ) 
-{ 
-$row_class ='row';
-$col_class ='col-xs-6 col-md-4 col-lg-2';
-echo '<div class="brands m-t-1">';
-}
-else {
-$col_class ='col-xs-4';
-$row_class ='row row-brands';
-}?>
+<section class="col-xs-12 client-logo">
+	<section class="container">
 
-	<div class="<?php echo $row_class;?>">
+		<div class="transition col-sm-4 counter-container">
+			<?php if( !empty( $instance['client_number'] ) ):?>
+			<span class="counter project-counter"><?php echo esc_attr( $instance['client_number'] );?></span>
+			<?php endif; ?>
+			<?php if( !empty( $instance['client_text'] ) ):?>
+			<span><?php echo esc_attr( $instance['client_text'] );?> </span>
+			<?php endif; ?>
 
-	<?php   foreach ( $instance['client_repeater'] as $client_repeater ){
+		</div>
+		<div class="col-sm-7 col-sm-offset-1">
+			<?php   foreach ( $instance['client_repeater'] as $client_repeater ):
 
-       	$image_url = wp_get_attachment_image_src( $client_repeater['client_title'], 'full'); ?>
+       		$image_url = wp_get_attachment_image_src( $client_repeater['client_title'], 'full'); ?>
 
-		<div class="<?php echo $col_class;?>"><img src="<?php echo esc_url( $image_url[0] );?>"></div>
+			<figure class="col-xs-6 col-md-4">
+				<a href="<?php echo esc_url( $client_repeater['client_url']);?>"><img src="<?php echo esc_url( $image_url[0] );?>" class="img-responsive" alt="client"></a>
+			</figure>
 
-	<?php } ?>
+			<?php endforeach; ?>
 
-	</div>
-
-<?php if( $instance['style']=='single' ) echo '</div>';?>
+			</div>
+		</section>
+</section>
