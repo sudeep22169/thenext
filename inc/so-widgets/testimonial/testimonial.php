@@ -11,15 +11,8 @@ class Fi_Print_Testimonial_Widget extends SiteOrigin_Widget {
 				),
 			array(),
 			array(
-				'title' => array(
-					'type'  => 'text',
-					'label' => __( 'widget Title', 'fi-print' )
-				),
-				'sub_title' => array(
-					'type'  => 'text',
-					'label' => __( 'Widget Subtitle', 'fi-print' )
-				),
-				
+
+
 				'testimonial_repeater' => array(
 					'type'  => 'repeater',
 					'label' => __('Testimonial Details.', 'fi-print'),
@@ -27,36 +20,19 @@ class Fi_Print_Testimonial_Widget extends SiteOrigin_Widget {
 
 						'testimonial_client_name'=>  array(
 							'type'  => 'text',
-							'label' => __( 'Client Name', 'fi-print' )
+							'label' => __( 'Client Name and Designation', 'fi-print' )
 						),
 
-						'testimonial_client_image'=>  array(
-							'type'  => 'media',
-							'label' => __( 'Client Image', 'fi-print' )
-
-						),
-						'testimonial_client_url' => array(
-						   'type'     => 'link',
-						   'label'    => __('Client URL', 'fi-print'),
-						),
 						'testimonial_client_site'=>  array(
 							'type'  => 'text',
 							'label' => __( 'Testimonial Content', 'fi-print' )
 
 						),
-					
-						
+
+
 					),
 				),
-				'testimonial_style' => array(
-						'type'     => 'select',
-						'label'    => __( 'testimonials Style', 'fi-print' ),
-						'default'  => 'one',
-						'options'  => array(
-							'one' => __( 'Style One', 'fi-print' ),
-							'two'  => __( 'Style Two', 'fi-print' ),
-						),
-				),
+
 
 			)
 		);
