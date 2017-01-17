@@ -415,9 +415,9 @@
                     ),
                 ),
             array(
-                'title'   => __('Disable Footer Widgets', 'next'),
-                'desc'    => __('Check to disable footer widgets.', 'next'),
-                'id'      => 'next_footer_widgetswitch',
+                'title'   => __('Disable Social Links', 'next'),
+                'desc'    => __('Check to disable social links in footer.', 'next'),
+                'id'      => 'next_footer_sociallinks',
                 'type'    => 'checkbox',
                 'default' => '0',
             ),
@@ -466,7 +466,43 @@
             ),
         )
     ) );
-    
+     // -----------------------------------------------------------------------------------
+    //  5.  Social Icons Image Link
+    // -----------------------------------------------------------------------------------
+    Redux::setSection( $opt_name, array(
+        'title'      => __('Social Icons', 'next'),
+        'desc'       => __('<span class="redux-title">Social Icons Here</span>', 'next'),
+        'icon'       => 'el el-link',
+        'icon_class' => '',
+        'subsection' => $next_customizer_subsection,
+        'customizer' => true,
+        'fields'     => array(           
+            array(
+                'title'   => __('Facebook Link', 'next'),
+                'desc'    => __('Add facebook link for site.', 'next'),
+                'id'      => 'next_facebook',
+                'type'    => 'text'
+            ),
+             array(
+                'title'   => __('Twitter Link', 'next'),
+                'desc'    => __('Add twitter link for site.', 'next'),
+                'id'      => 'next_twitter',
+                'type'    => 'text'
+            ),
+             array(
+                'title'   => __('Dribbble Link', 'next'),
+                'desc'    => __('Add dribbble link for site.', 'next'),
+                'id'      => 'next_dribbble',
+                'type'    => 'text'
+            ),
+             array(
+                'title'   => __('Instagram Link', 'next'),
+                'desc'    => __('Add instagram link for site.', 'next'),
+                'id'      => 'next_instagram',
+                'type'    => 'text'
+            )
+        )
+    ) );
  Redux::setSection( $opt_name, array(
         'title'      => __('Portfolio', 'next'),
         'desc'       => __('<span class="redux-title">Control Portfolio Pages</span>', 'next'),
