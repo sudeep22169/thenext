@@ -8,25 +8,23 @@
  *
  * @package thenext
  */
-
+global $next_options;
 ?>
 </section><!--header section-->
 	<section id="section-footer" class="col-xs-12">
 
   <div class="container">
       <?php get_template_part( 'partials/footer-layout'); ?>      
- </div>
+ </div>      
       
-      
-      <section class="col-xs-12 footer-widget widget-social widget-social-h text-center">
-	 
-	  <ul>
-	    <li><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
-	    <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
-	    <li><a href="#"><i class="fa fa-dribbble"></i>Dribbble</a></li>
-	    <li><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
-	  </ul>
-      </section>
+<section class="col-xs-12 footer-widget widget-social widget-social-h text-center">
+	<ul>
+		<li><a href="<?php echo esc_url();?>"><i class="fa fa-facebook"></i>Facebook</a></li>
+		<li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
+		<li><a href="#"><i class="fa fa-dribbble"></i>Dribbble</a></li>
+		<li><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
+	</ul>
+</section>
 	
 	
       <footer class="col-xs-12 copyright dark-bg">
