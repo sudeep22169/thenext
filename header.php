@@ -28,8 +28,11 @@
 	      <div><span></span></div>
 	  </div>
 	</div>
-<?php endif ; ?>
-<header id="section-header" class="navbar-fixed-top transition page-header page-header-semi-transparent">
+<?php endif ;
+$header_style=(isset($next_options['header-style']) && $next_options['header-style']=="hamburger")?'transparent':$next_options['header-style'];
+?>
+<header id="section-header" class="navbar-fixed-top transition page-header page-header-<?php echo esc_attr($header_style);?>">
+	<?php if($next_options['header-style']!="hamburger"):?>
 	<section class="container">
 		<div class="navbar-header">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -57,8 +60,46 @@
 	            );
 	        ?>      
 			<!-- end of mega menu -->		
-	    </nav><!-- /.navbar-collapse -->
+	    </nav><!-- /.navbar-collapse -->		
     </section>
+	<?php else:?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<?php if($next_options['logo']['url']!=""):?>
+                <img src="<?php echo esc_url($next_options['logo']['url']);?>" data-at2x="<?php echo esc_url($next_options['retina']['url']); ?>" alt="<?php bloginfo( 'name' ); ?>" class="logo">
+            <?php else:?>
+                <?php bloginfo( 'name' ); ?>
+            <?php endif;?>
+		</a>
+		<span id="openMenu" class="menu-icon">
+			<i class="icon icon-arrows-hamburger1"></i>
+			<span class="menu-name"><?php _e('Menu','next');?></span>
+	    </span>
+	    <nav class="menu-container menu-container-top" id="menu">
+        
+			<div id="closeMenu" class="text-left col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-4">
+			  <span class="icon icon-arrows-remove transition"></span>
+			</div>
+			
+			<div class="vc-text">   
+			  <!-- first column on the left -->
+			  <div class="menu-title col-xs-2 col-sm-3 col-md-4">
+			    <span><?php _e('home','next');?></span>
+			     
+			  </div>
+			  <?php
+	            wp_nav_menu( array(
+	            'theme_location'    => 'primary',
+	            'container'         => '',
+	            'container_class'   => 'col-xs-10 col-sm-9 col-md-8 menu-list',
+	            'container_id'      => 'bs-example-navbar-collapse-1',
+	            'menu_class'        => 'menu-item-links text-left',
+	            'fallback_cb'       => 'next_bootstrap_navwalker::fallback',
+	            'walker'            => new next_bootstrap_navwalker())
+	            );
+	        ?>      
+			</div>
+		</nav>
+	<?php endif;?>
 </header>
 <?php get_search_form();?>
 <!-- BODY SECTION -->

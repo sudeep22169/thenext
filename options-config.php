@@ -365,7 +365,20 @@
         'subsection' => $next_customizer_subsection,
         'customizer' => true,
         'fields'     => array(
-           
+           array(
+                'id'        => 'header-style',
+                'type'      => 'image_select',
+                'title'     => __('Option for Header Layout', 'creativ'),
+                'subtitle'  => __('Styles when Header position is Top', 'creativ'),
+                'options'   => array(
+                    'transparent' => get_template_directory_uri() . '/assets/img/header01.png',
+                    'semi-transparent' => get_template_directory_uri() . '/assets/img/header02.png',
+                    'hamburger' => get_template_directory_uri() . '/assets/img/header03.png',
+                    'solid-light' => get_template_directory_uri() . '/assets/img/header04.png',
+                    'solid-dark' => get_template_directory_uri() . '/assets/img/header05.png',
+                ), 
+                'default' => 'transparent'
+            ),
             array(
                 'title'   => __('Menu Button Text', 'next'),
                 'desc'    => __('Enter text for the button at the right side of navigation menu', 'next'),
