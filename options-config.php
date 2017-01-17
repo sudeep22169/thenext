@@ -422,17 +422,6 @@
                 'default' => '0',
             ),
             array(
-                'title'   => __('Footer Background color', 'next'),
-                'id'      => 'next_footer_background_color',
-                'type'    => 'color_rgba',
-                'default' =>'rgba(0, 40, 59, 0.97)',
-            ),
-            array(
-                'title'   => __('Footer extra class', 'next'),
-                'id'      => 'next_footer_extra_class',
-                'type'    => 'text',
-            ),
-            array(
                 'title'   => __('Disable Footer bottom', 'next'),
                 'desc'    => __('Check to disable bottom footer', 'next'),
                 'id'      => 'next_footer_bottom',
@@ -446,23 +435,10 @@
                 'type'    => 'media',
             ),
             array(
-                'title'   => __('Footer Text One', 'next'),
-                'desc'    => __('Text on the left side of bottom footer', 'next'),
-                'id'      => 'next_footer_text1',
+                'title'   => __('Footer Text', 'next'),
+                'desc'    => __('Text on the bottom of the footer', 'next'),
+                'id'      => 'next_footer_text',
                 'type'    => 'editor',
-            ),
-            array(
-                'title'   => __('Footer Text Two', 'next'),
-                'desc'    => __('Text on the right side of bottom footer', 'next'),
-                'id'      => 'next_footer_text2',
-                'type'    => 'editor',
-                'default' =>__('Made with <i class="fa fa-heart text-secondary"></i> by jThemes Studio','next'),
-            ),
-            array(
-                 'id'        => 'next_scrollup',
-                 'type'      => 'switch',
-                 'title'     => __('Enable Scroll Up Button', 'next'),
-                 'default'   => '1',
             ),
         )
     ) );
