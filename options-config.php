@@ -374,7 +374,7 @@
                     'transparent' => get_template_directory_uri() . '/assets/img/header01.png',
                     'semi-transparent' => get_template_directory_uri() . '/assets/img/header02.png',
                     'hamburger' => get_template_directory_uri() . '/assets/img/header03.png',
-                    'solid-light' => get_template_directory_uri() . '/assets/img/header04.png',
+                    'solid' => get_template_directory_uri() . '/assets/img/header04.png',
                     'solid-dark' => get_template_directory_uri() . '/assets/img/header05.png',
                 ), 
                 'default' => 'transparent'
