@@ -6,7 +6,6 @@
  *
  * @package thenext
  */
-global $next_options;
 if ( ! function_exists( 'thenext_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -216,7 +215,8 @@ require get_template_directory() . '/inc/aquaresizer.php';
 
 
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/options-config.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/options-config.php' );
+    require_once( dirname( __FILE__ ) . '/options-config.php' );   
+
 }
 // Tgmpa
 add_action( 'tgmpa_register', 'next_register_required_plugins' );
@@ -283,9 +283,7 @@ function next_register_required_plugins() {
 
 }
 // adding searh button in nav menu
-if($next_options['search']==1 && isset($next_options['search'])){
-	add_filter('wp_nav_menu_items','next_add_search_box_to_menu', 10, 2);
-}
+
 function next_add_search_box_to_menu( $items, $args ) {
     if( $args->theme_location == 'primary' )
         return $items.'<li class="hidden-xs"><span id="openSearch"><i class="icon icon-basic-magnifier black transition"></i></span></li>';
@@ -392,3 +390,7 @@ function thenext_blog_listing($post_id,$count,$post){
     </style><?php
 
 }
+/*
+* Added by rafin
+*/
+// Code to add search icon in nav   

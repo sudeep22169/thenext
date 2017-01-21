@@ -18,7 +18,10 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">	
 <?php wp_head(); ?>
 </head>
-<?php global $next_options;?>
+<?php global $next_options;
+if($next_options['search']==1 && isset($next_options['search']) && $next_options['header-style']!="hamburger"){
+	add_filter('wp_nav_menu_items','next_add_search_box_to_menu', 10, 2);
+}?>
 <body <?php body_class(); ?>>
 
 <?php if ( isset( $next_options['preloader'] )  && $next_options['preloader'] == 1 ) : ?>

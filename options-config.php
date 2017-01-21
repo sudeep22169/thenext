@@ -375,9 +375,14 @@
                     'semi-transparent' => get_template_directory_uri() . '/assets/img/header02.png',
                     'hamburger' => get_template_directory_uri() . '/assets/img/header03.png',
                     'solid' => get_template_directory_uri() . '/assets/img/header04.png',
-                    'solid-dark' => get_template_directory_uri() . '/assets/img/header05.png',
+                    'semi-dark' => get_template_directory_uri() . '/assets/img/header05.png',
                 ), 
                 'default' => 'transparent'
+            ),
+            array(                    
+                'title' => __('Enable Search Icon', 'next'),                    
+                'id'    => 'search',                    
+                'type'  => 'switch',                    
             ),
             array(
                 'title'   => __('Menu Button Text', 'next'),
