@@ -86,17 +86,19 @@ $header_style=(isset($next_options['header-style']) && $next_options['header-sty
 			    <span><?php _e('home','next');?></span>
 			     
 			  </div>
-			  <?php
-	            wp_nav_menu( array(
-	            'theme_location'    => 'primary',
-	            'container'         => '',
-	            'container_class'   => 'col-xs-10 col-sm-9 col-md-8 menu-list',
-	            'container_id'      => 'bs-example-navbar-collapse-1',
-	            'menu_class'        => 'menu-item-links text-left',
-	            'fallback_cb'       => 'next_bootstrap_navwalker::fallback',
-	            'walker'            => new next_bootstrap_navwalker())
-	            );
-	        ?>      
+			  	<div class="col-xs-10 col-sm-9 col-md-8 menu-list">
+				  <?php
+		            wp_nav_menu( array(
+		            'theme_location'    => 'primary',
+		            'container'         => '',
+		            'container_class'   => '',
+		            'container_id'      => 'bs-example-navbar-collapse-1',
+		            'menu_class'        => 'menu-item-links text-left',
+		            'fallback_cb'       => 'next_bootstrap_navwalker_hamburger::fallback',
+		            'walker'            => new next_bootstrap_navwalker_hamburger())
+		            );
+		        ?>    
+		        </div>  
 			</div>
 		</nav>
 	<?php endif;?>
