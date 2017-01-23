@@ -151,22 +151,54 @@ function next_post_title(){
   
 }
 
-function thenext_hextorgb($hex) {
-   $hex = str_replace('#', '', $hex);
-   if ( strlen($hex) == 6 ) {
-      $rgb['r'] = hexdec(substr($hex, 0, 2));
-      $rgb['g'] = hexdec(substr($hex, 2, 2));
-      $rgb['b'] = hexdec(substr($hex, 4, 2));
-   }
-   else if ( strlen($hex) == 3 ) {
-      $rgb['r'] = hexdec(str_repeat(substr($hex, 0, 1), 2));
-      $rgb['g'] = hexdec(str_repeat(substr($hex, 1, 1), 2));
-      $rgb['b'] = hexdec(str_repeat(substr($hex, 2, 1), 2));
-   }
-   else {
-      $rgb['r'] = '255';
-      $rgb['g'] = '255';
-      $rgb['b'] = '255';
-   }
-   return $rgb;
+if( !function_exists('thenext_hextorgb') ) {
+	/*Convert color hex code value to RGB
+	Reference: http://www.codexworld.com/convert-color-hex-to-rgb-and-rgb-to-hex-using-php/
+	 */
+	function thenext_hextorgb($hex) {
+	   $hex = str_replace('#', '', $hex);
+	   if ( strlen($hex) == 6 ) {
+	      $rgb['r'] = hexdec(substr($hex, 0, 2));
+	      $rgb['g'] = hexdec(substr($hex, 2, 2));
+	      $rgb['b'] = hexdec(substr($hex, 4, 2));
+	   }
+	   else if ( strlen($hex) == 3 ) {
+	      $rgb['r'] = hexdec(str_repeat(substr($hex, 0, 1), 2));
+	      $rgb['g'] = hexdec(str_repeat(substr($hex, 1, 1), 2));
+	      $rgb['b'] = hexdec(str_repeat(substr($hex, 2, 1), 2));
+	   }
+	   else {
+	      $rgb['r'] = '255';
+	      $rgb['g'] = '255';
+	      $rgb['b'] = '255';
+	   }
+	   return $rgb;
+	}
 }
+
+//
+add_filter('wp_kses_allowed_html', 'thenext_add_allowed_tags');
+
+if( !function_exists('thenext_add_allowed_tags') ) {
+	/*Add allowed HTML tags
+	Credit: http://themelovin.com/add-allowed-html-tags-wordpress/
+	 */
+	function thenext_add_allowed_tags( $tags ) {
+	
+		$tags['span'] = array(
+		'class' => false,
+		'id' => false
+		);
+
+		$tags['a'] = array(
+		'class' => false,
+		'id' => false,
+		'href' => true
+		);
+		
+		return $tags;
+	}
+}
+
+
+
