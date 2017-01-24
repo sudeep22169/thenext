@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Blog Page
+ * Template Name: List Blog Page
  */
 
 get_header(); 
@@ -17,16 +17,16 @@ $the_query = new WP_Query( $args );?>
 		<section id="blog-list" class="col-xs-12 main-section-margins">	
 			<section class="container text-center">
 				<section id="grid-list" class="more-padding"> 			  
-				  	<div class="more-posts-row">';
+				  	<div class="blog-list-row">';
 					while($the_query->have_posts()):
 						$the_query->the_post();?>
-						<div class="entry col-md-<?php echo (($count==1)?'12':'6');?>"><?php
+						<div class="entry"><?php
 						/**
 						 * Hook - blog_listing.
 						 *
 						 * @hooked: blog_listing - 10
 						 */
-							do_action('blog_listing',get_the_ID(),$count,$post,'grid',10,4);	?>					
+							do_action('blog_listing',get_the_ID(),$count,$post,'list',10,2);	?>					
 						</div><?php
 						$count++;
 				endwhile;echo '

@@ -33,29 +33,16 @@ class Fi_Print_Title_Widget extends SiteOrigin_Widget {
 					'type'  => 'textarea',
 					'label' => __( 'Sub Title', 'thenext' ),
 				),
-
-				'settings' => array(
-					'type'   => 'section',
-					'label'  => __( 'Color Settings', 'thenext' ),
-					'hide' => true,
-					'fields' => array(
-						'color_primary_title' => array(
-							'type'    => 'color',
-							'label'   => __( 'Primary Title Color', 'thenext' ),
-							'default' => '#fff',
-						),
-						'color_secondary_title' => array(
-							'type'    => 'color',
-							'label'   => __( 'Secondary Title Color', 'thenext' ),
-							'default' => '#fff',
-						),
-						'color_title_content' => array(
-							'type'    => 'color',
-							'label'   => __( 'Content Color', 'thenext' ),
-							'default' => '#fff',
-						),
-	    			),
-				),
+				'text_align' => array(
+					'type' => 'select',
+					'label' => __( 'Text Align', 'thenext' ),
+					'default' => 'center',
+					'options' => array(
+						'right' => __( 'Right', 'thenext' ),
+						'left' => __( 'Left', 'thenext' ),
+						'center' => __( 'Center', 'thenext' ),
+						)
+					),
 
 			)
 		);

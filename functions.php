@@ -6,7 +6,6 @@
  *
  * @package thenext
  */
-global $next_options;
 if ( ! function_exists( 'thenext_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -216,7 +215,8 @@ require get_template_directory() . '/inc/aquaresizer.php';
 
 
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/options-config.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/options-config.php' );
+    require_once( dirname( __FILE__ ) . '/options-config.php' );   
+
 }
 // Tgmpa
 add_action( 'tgmpa_register', 'next_register_required_plugins' );
@@ -283,9 +283,7 @@ function next_register_required_plugins() {
 
 }
 // adding searh button in nav menu
-if($next_options['search']==1 && isset($next_options['search'])){
-	add_filter('wp_nav_menu_items','next_add_search_box_to_menu', 10, 2);
-}
+
 function next_add_search_box_to_menu( $items, $args ) {
     if( $args->theme_location == 'primary' )
         return $items.'<li class="hidden-xs"><span id="openSearch"><i class="icon icon-basic-magnifier black transition"></i></span></li>';
@@ -360,8 +358,8 @@ add_filter('siteorigin_panels_after_row', 'thenext_panels_row_container_end', 10
 /**
  * Hook to show blogs
  */
-add_action('blog_listing','thenext_blog_listing',10,3);
-function thenext_blog_listing($post_id,$count,$post){
+add_action('blog_listing','thenext_blog_listing',10,4);
+function thenext_blog_listing($post_id,$count,$post,$type){
     $w=($count==1)?'1110':'570';
     $thumbnail = get_post_thumbnail_id($post_id);
     $img_url = wp_get_attachment_image_src( $thumbnail,'full');
@@ -370,19 +368,35 @@ function thenext_blog_listing($post_id,$count,$post){
         $n_img = aq_resize( $img_url[0], $width =$w, $height = 270, $crop = true, $single = true, $upscale = true );
     endif;
     $author_id=$post->post_author; 
-    echo '
-    <article id="third-article'.$post_id.'" class="text-left block"><div class="blog-header">                  
-    <div class="blog-date col-xs-1 col-md-1">'.get_the_date('d').'<i>'.get_the_date('M').'</i></div>
-        <h5 class="blog-title col-xs-11 col-md-10">                  
-            <a href="'.get_the_permalink().'">'.get_the_title().'</a>                  
-        </h5>        
-    </div>
-   
-    <div class="blog-meta col-xs-12 col-md-10">          
-        <a href="'.get_author_posts_url($author_id).'"><i class="icon icon-basic-pin2"></i>'.get_the_author_meta(  'user_nicename' , $author_id ).'</a>
-        <a href="#"><i class="icon icon-basic-heart"></i> 24</a>
-        <a href="'.get_comments_link().'"><i class="icon icon-basic-message"></i>'.get_comments_number( '0', '1', '%' ).'</a>
-    </div>   </article>';?>
+    if($type=="grid"){
+
+        echo '
+        <article id="third-article'.$post_id.'" class="text-left block"><div class="blog-header">                  
+        <div class="blog-date col-xs-1 col-md-1">'.get_the_date('d').'<i>'.get_the_date('M').'</i></div>
+            <h5 class="blog-title col-xs-11 col-md-10">                  
+                <a href="'.get_the_permalink().'">'.get_the_title().'</a>                  
+            </h5>        
+        </div>
+       
+        <div class="blog-meta col-xs-12 col-md-10">          
+            <a href="'.get_author_posts_url($author_id).'"><i class="icon icon-basic-pin2"></i>'.get_the_author_meta(  'user_nicename' , $author_id ).'</a>
+            <a href="#"><i class="icon icon-basic-heart"></i> 24</a>
+            <a href="'.get_comments_link().'"><i class="icon icon-basic-message"></i>'.get_comments_number( '0', '1', '%' ).'</a>
+        </div>   </article>';
+    }else {
+        echo '<article id="third-article'.$post_id.'" class="text-left block latest-post"><div class="blog-header col-xs-12">              
+            <div class="blog-date col-xs-1 col-md-1">'.get_the_date('d').'<i>'.get_the_date('M').'</i></div>    
+            <h5 class="blog-title col-xs-11 col-md-10">              
+                <a href="'.get_the_permalink().'">'.get_the_title().'</a>         
+            </h5>            
+            </div>            
+            <div class="blog-meta col-xs-12 col-md-10">              
+                <a href="'.get_author_posts_url($author_id).'"><i class="icon icon-basic-pin2"></i>'.get_the_author_meta(  'user_nicename' , $author_id ).'</a>
+                <a href="#"><i class="icon icon-basic-heart"></i> 24</a>
+                <a href="'.get_comments_link().'"><i class="icon icon-basic-message"></i>'.get_comments_number( '0', '1', '%' ).'</a>
+            </div>           
+          </article>';
+    } ?>
     <style>
         #third-article<?php echo $post_id;?>.block:hover:after, 
         #third-article<?php echo $post_id;?>.block.latest-post:after {
@@ -392,3 +406,7 @@ function thenext_blog_listing($post_id,$count,$post){
     </style><?php
 
 }
+/*
+* Added by rafin
+*/
+// Code to add search icon in nav   

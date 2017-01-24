@@ -33,8 +33,10 @@ if ( class_exists( 'SiteOrigin_Widget' ) ) {
 		'banner'           =>'banner/banner.php',
 		'random-images'    =>'random-images/random-images.php',
 		'progressbar'      =>'progressbar/progressbar.php',
-		'team'             =>'team/team.php'
+		'team'             =>'team/team.php',
+		'gallery'      =>'gallery/gallery.php'
 		);
+
 		$temp_dir = get_template_directory();
 		foreach ($so_widgets as $key => $value) {
 			require $temp_dir . '/inc/so-widgets/'. $value;
