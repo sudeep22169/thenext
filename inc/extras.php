@@ -83,7 +83,7 @@ if(!function_exists('next_breadcrumb')):
 	        $cat = get_the_category(); $cat = $cat[0];
 	        $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
 	        if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
-	        echo $cats;
+	        echo '<li>'.$cats.'</li>';
 	        if ($showCurrent == 1) echo $before . get_the_title() . $after;
 	      }
 	 

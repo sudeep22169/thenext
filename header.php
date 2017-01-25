@@ -66,17 +66,19 @@ $header_style=(isset($next_options['header-style']) && $next_options['header-sty
 	    </nav><!-- /.navbar-collapse -->		
     </section>
 	<?php else:?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<?php if($next_options['logo']['url']!=""):?>
-                <img src="<?php echo esc_url($next_options['logo']['url']);?>" data-at2x="<?php echo esc_url($next_options['retina']['url']); ?>" alt="<?php bloginfo( 'name' ); ?>" class="logo">
-            <?php else:?>
-                <?php bloginfo( 'name' ); ?>
-            <?php endif;?>
-		</a>
-		<span id="openMenu" class="menu-icon">
-			<i class="icon icon-arrows-hamburger1"></i>
-			<span class="menu-name"><?php _e('Menu','next');?></span>
-	    </span>
+		<section class="container">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<?php if($next_options['logo']['url']!=""):?>
+	                <img src="<?php echo esc_url($next_options['logo']['url']);?>" data-at2x="<?php echo esc_url($next_options['retina']['url']); ?>" alt="<?php bloginfo( 'name' ); ?>" class="logo">
+	            <?php else:?>
+	                <?php bloginfo( 'name' ); ?>
+	            <?php endif;?>
+			</a>
+			<span id="openMenu" class="menu-icon">
+				<i class="icon icon-arrows-hamburger1"></i>
+				<span class="menu-name"><?php _e('Menu','next');?></span>
+		    </span>
+	    </section>
 	    <nav class="menu-container menu-container-top" id="menu">
         
 			<div id="closeMenu" class="text-left col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-4">

@@ -2,6 +2,30 @@
 if (!defined('ABSPATH')) {echo '<h3>Forbidden</h3>'; exit();} 
 global $next_options;
 $pageid=get_the_ID();
+if(is_singular()){
+    $bc_image=get_template_directory_uri().'/assets/images/photo11.jpg';
+    $bc_style=0;$bc_style_theme=0;
+    if(!empty($next_options['single_banner']['url'])):
+        $bc_image=esc_url($next_options['single_banner']['url']);
+    endif;
+    ?>
+    <section id="banner-blog-single" class="col-xs-12 banner-sm" style="background: url('<?php echo esc_url($bc_image); ?>') no-repeat 50% fixed;background-size: cover;">
+        <section class="container banner-title-2">
+            <?php if($next_options['single_title']):?>
+                <h1 class="title text-uppercase white transition"><?php echo esc_attr($next_options['single_title']);?></h1>
+            <?php endif; if($next_options['single_subtitle']):?>
+                <p class="lead white text-uppercase"><?php echo wp_kses_post($next_options['single_subtitle']);?></p>
+            <?php endif;?>         
+        </section>       
+        <section class="bread-crumb">
+            <section class="container">     
+                <ul><?php next_breadcrumb();?></ul>
+            </section>
+        </section>
+    </section>
+<?php
+}
+else{
 $bc_image=get_template_directory_uri().'/assets/images/minimal.jpg';
 $bc_style=0;$bc_style_theme=0;
 if(!empty($next_options['breadcrumb_image']['url'])):
@@ -14,11 +38,11 @@ endif;?>
 
 
 <section id="banner-blog" class="banner-600 col-xs-12" style="background: url('<?php echo esc_url($bc_image); ?>') no-repeat 50% fixed;background-size: cover;">
-<?php
+    <?php
     
     $page_setting_title=get_post_meta( $pageid, 'page_header_title',true);
     $page_setting_subtitle=get_post_meta( $pageid, 'page_header_subtitle',true);
-?>
+    ?>
     <section class="container">
         <section class="col-sm-12 banner-title">
         <?php
@@ -61,3 +85,5 @@ endif;?>
     </section>
     </section>
 </section>
+<?php }
+?>

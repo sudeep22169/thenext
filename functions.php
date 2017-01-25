@@ -216,7 +216,6 @@ require get_template_directory() . '/inc/aquaresizer.php';
 
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/options-config.php' ) ) {
     require_once( dirname( __FILE__ ) . '/options-config.php' );   
-
 }
 // Tgmpa
 add_action( 'tgmpa_register', 'next_register_required_plugins' );
@@ -406,6 +405,8 @@ function thenext_blog_listing($post_id,$count,$post,$type){
     </style><?php
 
 }
+global $next_options;
+var_dump($next_options);
 /*
 * Added by rafin
 */

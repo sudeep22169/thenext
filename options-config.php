@@ -512,6 +512,37 @@
                 'type'    => 'text',
                 'default' => '10',
             ),
+
+        )
+    ) );
+    Redux::setSection( $opt_name, array(
+        'title'      => __('Blog Post', 'next'),
+        'desc'       => __('<span class="redux-title">Control Blog Post Pages</span>', 'next'),
+        'icon'       => 'el el-comment',
+        'icon_class' => '',
+        'subsection' => $next_customizer_subsection,
+        'customizer' => true,
+        'fields'     => array(
+            array(
+                'title'   => __('Single Blog Banner Image', 'next'),
+                'desc'    => __('Upload image to show in single post page as banner image', 'next'),
+                'id'      => 'single_banner',
+                'type'    => 'media'
+            ),
+            array(
+                'title'   => __('Single Blog Page Title', 'next'),
+                'desc'    => __('Title to display over banner image in single post page', 'next'),
+                'id'      => 'single_title',
+                'type'    => 'text',
+                'default' => __('BLOG SINGLE','next')
+            ),
+            array(
+                'title'   => __('Single Blog Page Subtitle', 'next'),
+                'desc'    => __('Subtitle to display over banner image in single post page', 'next'),
+                'id'      => 'single_subtitle',
+                'type'    => 'text',
+                'default' => __('WE ARE A CREATIVE AGENCY SINCE 1986.','next')
+            ),
         )
     ) );
     /*
