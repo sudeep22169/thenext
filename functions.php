@@ -405,8 +405,6 @@ function thenext_blog_listing($post_id,$count,$post,$type){
     </style><?php
 
 }
-global $next_options;
-var_dump($next_options);
 /*
 * Added by rafin
 */
